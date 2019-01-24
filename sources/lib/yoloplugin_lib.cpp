@@ -150,7 +150,7 @@ std::vector<YoloPluginOutput*> YoloPluginProcess(YoloPluginCtx* ctx, std::vector
         gettimeofday(&preEnd, NULL);
 
         gettimeofday(&inferStart, NULL);
-        ctx->inferenceNetwork->doInference(preprocessedImages.data);
+        ctx->inferenceNetwork->doInference(preprocessedImages.data, cvmats.size());
         gettimeofday(&inferEnd, NULL);
 
         gettimeofday(&postStart, NULL);

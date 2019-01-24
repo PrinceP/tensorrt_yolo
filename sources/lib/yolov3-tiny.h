@@ -33,7 +33,7 @@ class YoloV3Tiny : public Yolo
 public:
     explicit YoloV3Tiny(const uint batchSize);
     explicit YoloV3Tiny(const uint batchSize, const std::string Path);
-    void doInference(const unsigned char* input) override;
+    void doInference(const unsigned char* input , int currentBatch) override;
     std::vector<BBoxInfo> decodeDetections(const int& imageIdx, const int& imageH,
                                            const int& imageW) override;
 

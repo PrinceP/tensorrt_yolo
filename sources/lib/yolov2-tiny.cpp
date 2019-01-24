@@ -45,16 +45,16 @@ YoloV2Tiny::YoloV2Tiny(uint batchSize) :
     m_TrtOutputBuffers.front() = new float[m_OutputSize * m_BatchSize];
 };
 
-void YoloV2Tiny::doInference(const unsigned char* input)
+void YoloV2Tiny::doInference(const unsigned char* input, int currentBatch)
 {
     NV_CUDA_CHECK(cudaMemcpyAsync(m_Bindings.at(m_InputIndex), input,
-                                  m_BatchSize * m_InputSize * sizeof(float), cudaMemcpyHostToDevice,
+                                  currentBatch * m_InputSize * sizeof(float), cudaMemcpyHostToDevice,
                                   m_CudaStream));
 
-    m_Context->enqueue(m_BatchSize, m_Bindings.data(), m_CudaStream, nullptr);
+    m_Context->enqueue(currentBatch , m_Bindings.data(), m_CudaStream, nullptr);
 
     NV_CUDA_CHECK(cudaMemcpyAsync(m_TrtOutputBuffers.at(0), m_Bindings.at(m_OutputIndex),
-                                  m_BatchSize * m_OutputSize * sizeof(float),
+                                  currentBatch * m_OutputSize * sizeof(float),
                                   cudaMemcpyDeviceToHost, m_CudaStream));
     cudaStreamSynchronize(m_CudaStream);
 }
