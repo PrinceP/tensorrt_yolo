@@ -1,0 +1,256 @@
+==8076== Memcheck, a memory error detector
+==8076== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8076== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8076== Command: uv-yolo-app
+==8076== Parent PID: 1
+==8076== 
+--8076-- 
+--8076-- Valgrind options:
+--8076--    --leak-check=full
+--8076--    --show-leak-kinds=all
+--8076--    --track-origins=yes
+--8076--    --verbose
+--8076--    --log-file=valgrind-out.txt
+--8076-- Contents of /proc/version:
+--8076--   Linux version 4.4.38-tegra (buildbrain@mobile-u64-773) (gcc version 4.8.5 (GCC) ) #1 SMP PREEMPT Thu May 17 00:15:19 PDT 2018
+--8076-- 
+--8076-- Arch and hwcaps: ARM64, LittleEndian, baseline
+--8076-- Page sizes: currently 4096, max supported 65536
+--8076-- Valgrind library directory: /usr/lib/valgrind
+--8076-- Reading syms from /usr/bin/uv-yolo-app
+--8076-- Reading syms from /lib/aarch64-linux-gnu/ld-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/ld-2.23.so ..
+--8076--   .. CRC mismatch (computed e457a33c wanted 4d115cf6)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/ld-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /usr/lib/valgrind/memcheck-arm64-linux
+--8076--   Considering /usr/lib/valgrind/memcheck-arm64-linux ..
+--8076--   .. CRC mismatch (computed 8f09826f wanted 6178e9e2)
+--8076--    object doesn't have a symbol table
+--8076--    object doesn't have a dynamic symbol table
+--8076-- Scheduler: using generic scheduler lock implementation.
+--8076-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==8076== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-8076-by-???-on-3e471850d08f
+==8076== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-8076-by-???-on-3e471850d08f
+==8076== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-8076-by-???-on-3e471850d08f
+==8076== 
+==8076== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8076== don't want to do, unless you know exactly what you're doing,
+==8076== or are doing some strange experiment):
+==8076==   /usr/lib/valgrind/../../bin/vgdb --pid=8076 ...command...
+==8076== 
+==8076== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8076==   /path/to/gdb uv-yolo-app
+==8076== and then give GDB the following command
+==8076==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=8076
+==8076== --pid is optional if only one valgrind process is running
+==8076== 
+--8076-- REDIR: 0x4016dc0 (ld-linux-aarch64.so.1:strlen) redirected to 0x38055570 (???)
+--8076-- REDIR: 0x4016cc0 (ld-linux-aarch64.so.1:strcmp) redirected to 0x380555c4 (???)
+--8076-- REDIR: 0x4016bd0 (ld-linux-aarch64.so.1:index) redirected to 0x38055598 (???)
+--8076-- Reading syms from /usr/lib/valgrind/vgpreload_core-arm64-linux.so
+--8076--   Considering /usr/lib/valgrind/vgpreload_core-arm64-linux.so ..
+--8076--   .. CRC mismatch (computed 5ef38139 wanted e355e9f6)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so
+--8076--   Considering /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so ..
+--8076--   .. CRC mismatch (computed c1066ef3 wanted 4e5d95d5)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libnvinfer.so.4.1.3
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.4.1.3
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/local/cuda/targets/aarch64-linux/lib/libcudart.so.9.0.252
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/local/lib/libopencv_core.so.3.3.1
+--8076-- Reading syms from /usr/local/lib/libopencv_imgproc.so.3.3.1
+--8076-- Reading syms from /usr/local/lib/libopencv_imgcodecs.so.3.3.1
+--8076-- Reading syms from /usr/local/lib/libopencv_highgui.so.3.3.1
+--8076-- Reading syms from /usr/local/lib/libopencv_dnn.so.3.3.1
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libgflags.so.2.1.2
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libjson-c.so.2.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libzmq.so.5.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libcurl.so.4.4.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.21
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.21 ..
+--8076--   .. CRC mismatch (computed ad8bcb6e wanted ff17bbac)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libm-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/libm-2.23.so ..
+--8076--   .. CRC mismatch (computed 230ffe37 wanted 19f9eda7)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libm-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libgcc_s.so.1
+--8076--   Considering /lib/aarch64-linux-gnu/libgcc_s.so.1 ..
+--8076--   .. CRC mismatch (computed 94ac48c9 wanted 45f27162)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libc-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/libc-2.23.so ..
+--8076--   .. CRC mismatch (computed 007f2151 wanted 246e899f)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libc-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libcudnn.so.7.1.5
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/local/cuda/targets/aarch64-linux/lib/libcublas.so.9.0.252
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libpthread-2.23.so
+--8076--   Considering /usr/lib/debug/.build-id/c1/85d8d132dc6e628f522019514604a9ff12ac9b.debug ..
+--8076--   .. build-id is valid
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libdl-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/libdl-2.23.so ..
+--8076--   .. CRC mismatch (computed 6ac26d76 wanted 9f5998ff)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libdl-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /lib/aarch64-linux-gnu/librt-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/librt-2.23.so ..
+--8076--   .. CRC mismatch (computed 689e6326 wanted dc0b39a6)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/librt-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libsodium.so.18.0.1
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libidn.so.11.6.15
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/librtmp.so.1
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libssl.so.1.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libcrypto.so.1.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libgssapi_krb5.so.2.2
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libgssapi_krb5.so.2.2 ..
+--8076--   .. CRC mismatch (computed a7b89aac wanted 487d8ab9)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/liblber-2.4.so.2.10.5
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libldap_r-2.4.so.2.10.5
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libz.so.1.2.8
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libgnutls.so.30.6.2
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libhogweed.so.4.2
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libhogweed.so.4.2 ..
+--8076--   .. CRC mismatch (computed 165546b1 wanted dd04002d)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libnettle.so.6.2
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libnettle.so.6.2 ..
+--8076--   .. CRC mismatch (computed 7e586cfe wanted a1ba6422)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libgmp.so.10.3.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libkrb5.so.3.3
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libkrb5.so.3.3 ..
+--8076--   .. CRC mismatch (computed b7358d45 wanted cf026f35)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libk5crypto.so.3.1
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libk5crypto.so.3.1 ..
+--8076--   .. CRC mismatch (computed b82bc58c wanted 6eee598c)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libcom_err.so.2.1
+--8076--   Considering /lib/aarch64-linux-gnu/libcom_err.so.2.1 ..
+--8076--   .. CRC mismatch (computed a5833d4e wanted c7b54ace)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libkrb5support.so.0.1
+--8076--   Considering /usr/lib/aarch64-linux-gnu/libkrb5support.so.0.1 ..
+--8076--   .. CRC mismatch (computed a2ad3e76 wanted 6799ebe4)
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libresolv-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/libresolv-2.23.so ..
+--8076--   .. CRC mismatch (computed ea19b1eb wanted c34746ab)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libresolv-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libsasl2.so.2.0.25
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libgssapi.so.3.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libp11-kit.so.0.1.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libtasn1.so.6.5.1
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libkeyutils.so.1.5
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libheimntlm.so.0.1.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libkrb5.so.26.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libasn1.so.8.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libhcrypto.so.4.1.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libroken.so.18.1.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libffi.so.6.0.4
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libwind.so.0.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libheimbase.so.1.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libhx509.so.5.0.0
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /usr/lib/aarch64-linux-gnu/libsqlite3.so.0.8.6
+--8076--    object doesn't have a symbol table
+--8076-- Reading syms from /lib/aarch64-linux-gnu/libcrypt-2.23.so
+--8076--   Considering /lib/aarch64-linux-gnu/libcrypt-2.23.so ..
+--8076--   .. CRC mismatch (computed adb356f7 wanted b54aa358)
+--8076--   Considering /usr/lib/debug/lib/aarch64-linux-gnu/libcrypt-2.23.so ..
+--8076--   .. CRC is valid
+--8076-- REDIR: 0xac16a40 (libc.so.6:memcpy) redirected to 0x4849980 (memcpy)
+--8076-- REDIR: 0xac14ed0 (libc.so.6:rindex) redirected to 0x4847a08 (rindex)
+--8076-- REDIR: 0xac14a80 (libc.so.6:strlen) redirected to 0x4848058 (strlen)
+--8076-- REDIR: 0xac103b0 (libc.so.6:malloc) redirected to 0x4844b10 (malloc)
+--8076-- REDIR: 0xac14380 (libc.so.6:strcmp) redirected to 0x48491c8 (strcmp)
+--8076-- REDIR: 0xac10d40 (libc.so.6:calloc) redirected to 0x4846c50 (calloc)
+--8076-- REDIR: 0xac142a0 (libc.so.6:index) redirected to 0x4847bb8 (index)
+--8076-- REDIR: 0xac71640 (libc.so.6:__memcpy_chk) redirected to 0x484c468 (__memcpy_chk)
+--8076-- REDIR: 0xac10988 (libc.so.6:free) redirected to 0x4845de0 (free)
+--8076-- REDIR: 0xac16340 (libc.so.6:memset) redirected to 0x484b610 (memset)
+--8076-- REDIR: 0xac10a40 (libc.so.6:realloc) redirected to 0x4846e90 (realloc)
+--8076-- REDIR: 0xac14e68 (libc.so.6:strncpy) redirected to 0x4848330 (strncpy)
+--8076-- REDIR: 0xac18580 (libc.so.6:strchrnul) redirected to 0x484be38 (strchrnul)
+--8076-- REDIR: 0xac16948 (libc.so.6:strncasecmp_l) redirected to 0x4848e80 (strncasecmp_l)
+--8076-- REDIR: 0xac15f00 (libc.so.6:bcmp) redirected to 0x484ae20 (bcmp)
+--8076-- REDIR: 0xa9cfcc0 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4845090 (operator new(unsigned long))
+--8076-- REDIR: 0xac12810 (libc.so.6:posix_memalign) redirected to 0x4847278 (posix_memalign)
+--8076-- REDIR: 0xac18450 (libc.so.6:rawmemchr) redirected to 0x484be60 (rawmemchr)
+--8076-- REDIR: 0xac16000 (libc.so.6:memmove) redirected to 0x484b6a8 (memmove)
+--8076-- REDIR: 0xa9cdc40 (libstdc++.so.6:operator delete(void*)) redirected to 0x48462b0 (operator delete(void*))
+--8076-- REDIR: 0xac14440 (libc.so.6:strcpy) redirected to 0x4848170 (strcpy)
+--8076-- REDIR: 0xac15860 (libc.so.6:strstr) redirected to 0x484c580 (strstr)
+--8076-- REDIR: 0xac15de8 (libc.so.6:memchr) redirected to 0x4849378 (memchr)
+--8076-- REDIR: 0xac14d5c (libc.so.6:strncmp) redirected to 0x48487f0 (strncmp)
+--8076-- REDIR: 0xac16600 (libc.so.6:stpcpy) redirected to 0x484afa0 (stpcpy)
+--8076-- REDIR: 0xac16890 (libc.so.6:strncasecmp) redirected to 0x4848ae0 (strncasecmp)
+--8076-- REDIR: 0xac16830 (libc.so.6:strcasecmp) redirected to 0x48489f0 (strcasecmp)
+==8076== 
+==8076== HEAP SUMMARY:
+==8076==     in use at exit: 193,875 bytes in 3,610 blocks
+==8076==   total heap usage: 31,970 allocs, 28,360 frees, 2,541,899 bytes allocated
+==8076== 
+==8076== Searching for pointers to 3,610 not-freed blocks
+==8076== Checked 7,180,696 bytes
+==8076== 
+==8076== 32 bytes in 1 blocks are still reachable in loss record 1 of 4
+==8076==    at 0x4846CFC: calloc (in /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so)
+==8076== 
+==8076== 18,432 bytes in 2 blocks are still reachable in loss record 2 of 4
+==8076==    at 0x4846F14: realloc (in /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so)
+==8076== 
+==8076== 22,443 bytes in 385 blocks are still reachable in loss record 3 of 4
+==8076==    at 0x4845108: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so)
+==8076== 
+==8076== 152,968 bytes in 3,222 blocks are still reachable in loss record 4 of 4
+==8076==    at 0x4844B88: malloc (in /usr/lib/valgrind/vgpreload_memcheck-arm64-linux.so)
+==8076== 
+==8076== LEAK SUMMARY:
+==8076==    definitely lost: 0 bytes in 0 blocks
+==8076==    indirectly lost: 0 bytes in 0 blocks
+==8076==      possibly lost: 0 bytes in 0 blocks
+==8076==    still reachable: 193,875 bytes in 3,610 blocks
+==8076==         suppressed: 0 bytes in 0 blocks
+==8076== 
+==8076== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==8076== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

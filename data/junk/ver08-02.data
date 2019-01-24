@@ -1,0 +1,5 @@
+classes= 1
+train = /tiny_yolo_train/data/ver08-02/train2017_person_images_key3_nocrowd_list.txt
+#valid =
+names = /tiny_yolo_train/models/ver08-02/ver08-02.names
+backup = /tiny_yolo_train/snapshots/ver08-02_01/
